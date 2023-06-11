@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html th:fragment="layout (title, content)" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:replace="${title}">Layout Title</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" type="text/css" media="all" href="../../../css/phonebook.css"
+          th:href="@{/css/phonebook.css}"/>
+</head>
+
+<body>
+<h1>WSE Phonebook</h1>
+<div th:replace="~{layout/menu :: menu}"></div>
+<div th:replace="${content}"></div>
+<div th:insert="~{layout/footer}">&copy; 2011 The Static Templates</div>
+</body>
+</html>

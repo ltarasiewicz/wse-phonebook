@@ -1,0 +1,29 @@
+<html th:replace="~{layout/base :: layout(~{::title}, ~{::section})}">
+
+<title>Add Contact</title>
+
+<section>
+    <h2>Add contact</h2>
+
+    <form method="post">
+        <div>
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" minlength="3" required/>
+        </div>
+
+        <div>
+            <label for="surname">Surname</label>
+            <input type="text" id="surname" name="surname" minlength="3" required/>
+        </div>
+
+        <div>
+            <label for="contactNumber">Contact number</label>
+            <input type="number" id="contactNumber" name="contactNumber" minlength="9" required/>
+        </div>
+        <div>
+            <input type="submit" value="Add"/>
+        </div>
+    </form>
+</section>
+
+</html>

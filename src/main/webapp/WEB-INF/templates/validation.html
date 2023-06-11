@@ -1,0 +1,9 @@
+<html th:replace="~{layout/base :: layout(~{::title}, ~{::section})}">
+
+<title>Validation error</title>
+
+<section>
+    <h3 class="error" th:text="${session.error}">Error message</h3>
+</section>
+
+</html>

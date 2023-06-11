@@ -1,0 +1,40 @@
+<html th:replace="~{layout/base :: layout(~{::title}, ~{::section})}">
+
+<title>WSE Phonebook</title>
+
+<section>
+    <h2>Contacts</h2>
+
+    <form method="get">
+        <label for="search">Find contacts</label>
+        <input type="text" id="search" name="search" minlength="3" required/>
+        <input type="submit" value="Search"/>
+    </form>
+    <form method="get">
+        <input type="number" id="searchID" name="searchID" hidden value=""/>
+        <input type="submit" value="Reset search"/>
+    </form>
+
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>NAME</th>
+            <th>SURNAME</th>
+            <th>NUMBER</th>
+        </tr>
+        <tr th:each="contact : ${contacts}">
+            <td th:text="${contact.id}">1</td>
+            <td th:text="${contact.name}">Luke</td>
+            <td th:text="${contact.surname}">Luke</td>
+            <td th:text="${contact.contactNumber}">Luke</td>
+        </tr>
+    </table>
+
+    <form method="get" th:action="@{/delete}">
+        <label for="search">Delete contact by ID</label>
+        <input type="number" id="deleteID" name="deleteID"/>
+        <input type="submit" value="Delete"/>
+    </form>
+
+</section>
+</html>
